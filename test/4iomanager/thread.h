@@ -4,6 +4,9 @@
 #include <condition_variable>
 #include <functional>
 #include <string>
+#include <sys/syscall.h>
+#include <iostream>
+#include <unistd.h>
 
 namespace sylar
 {

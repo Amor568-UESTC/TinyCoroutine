@@ -33,6 +33,9 @@ public:
     void setUserNonblock(bool v) { m_userNonblock = v; }
     bool getUserNonblock() const { return m_userNonblock; }
 
+    void getSysNonblock(bool v) { m_sysNonblock = v; }
+    bool getSysNonblock() const { return m_sysNonblock; }
+
     void setTimeout(int type, uint64_t v);
     uint64_t getTimeout(int type);
 };
@@ -51,6 +54,8 @@ public:
 
 };
 
+
+// 单例模板类
 template<typename T>
 class Singleton
 {

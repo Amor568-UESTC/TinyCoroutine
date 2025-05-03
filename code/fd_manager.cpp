@@ -30,7 +30,7 @@ bool FdCtx::init()
         return 0;
 
     struct stat statbuf;
-    if (-1 == fstat(m_fd, &statbuf))
+    if (-1 == fstat(m_fd, &statbuf)) //由文件描述符fd获取文件信息
     {
         m_isInit = 0;
         m_isSocket = 0;

@@ -12,7 +12,7 @@ namespace sylar
 class Scheduler     //调度器
 {
 private:
-    struct ScheduleTask
+    struct ScheduleTask  //调度任务
     {
         std::shared_ptr<Fiber> fiber;
         std::function<void()> cb;
@@ -75,8 +75,8 @@ private:
 protected:
     void SetThis();
 
-    virtual void tickle();
-    virtual void run(); 
+    virtual void tickle();  //在IOManager中实现
+    virtual void run();     //Scheduler开始运行
     virtual void idle();    //空闲协程函数
     virtual bool stopping();    //是否可关闭
 
@@ -92,7 +92,7 @@ public:
 
 public:
     template <class FiberOrCb>
-    void scheduleLock(FiberOrCb fc, int thread = -1)
+    void scheduleLock(FiberOrCb fc, int thread = -1)    //将任务放入队列中
     {
         bool need_tickle;
 

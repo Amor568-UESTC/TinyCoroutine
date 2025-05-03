@@ -36,7 +36,7 @@ void Scheduler::run()
             auto it = m_tasks.begin();
             while (it != m_tasks.end())
             {
-                if (it->thread != -1 && it->thread != thread_id)
+                if (it->thread != -1 && it->thread != thread_id)    //找到thread_id对应的任务
                 {
                     ++it;
                     tickle_me = 1;

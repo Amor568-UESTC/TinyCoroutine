@@ -47,7 +47,7 @@ void IOManager::FdContext::triggerEvent(Event event)
 
 void IOManager::tickle()
 {
-    if (!hasIdleThreads)
+    if (!hasIdleThreads())
         return ;
     int rt = write(m_tickleFds[1], "T", 1);  //往管道里写一个T
     assert(rt == 1);
@@ -167,7 +167,7 @@ void IOManager::contextResize(size_t size)
 IOManager::IOManager(size_t threads, bool use_caller, const std::string& name) :
 Scheduler(threads, use_caller, name), TimerManager()
 {
-    m_epfd = epoll_create1(5000);
+    m_epfd = epoll_create(5000);
     assert(m_epfd > 0);
 
     int rt = pipe(m_tickleFds);

@@ -5,8 +5,8 @@ static bool debug = 0;  //简单debug，可后续升级为log
 namespace sylar
 {
 
-static thread_local Fiber* t_fiber = nullptr;   
-static thread_local std::shared_ptr<Fiber> t_thread_fiber = nullptr;
+static thread_local Fiber* t_fiber = nullptr;   // 正在运行的fiber
+static thread_local std::shared_ptr<Fiber> t_thread_fiber = nullptr; // 主fiber
 static thread_local Fiber* t_scheduler_fiber = nullptr; //调度作用fiber
 static std::atomic<uint64_t> s_fiber_id{0};
 static std::atomic<uint64_t> s_fiber_cnt{0};

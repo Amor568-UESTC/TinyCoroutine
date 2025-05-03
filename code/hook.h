@@ -15,9 +15,13 @@ void set_hook_enable(bool flag);
 
 }
 
+typedef unsigned int (*P) ();
+
 extern "C"
 {
-    typedef unsigned int (*sleep_fun) (unsigned int seconds);
+	// 定义一个函数指针*sleep_fun指向返回类型为unsigned int 的函数，参数为unsigned int 类型
+    typedef unsigned int (*sleep_fun) (unsigned int seconds);		
+	// 用sleep_fun在外部定义了sleep_f
 	extern sleep_fun sleep_f;
 
 	typedef int (*usleep_fun) (useconds_t usec);
@@ -81,6 +85,7 @@ extern "C"
     extern setsockopt_fun setsockopt_f;
 
     // function prototype -> 对应.h中已经存在 可以省略
+	
 	// sleep function 
 	unsigned int sleep(unsigned int seconds);
 	int usleep(useconds_t usce);

@@ -39,7 +39,7 @@ public:
     Fiber(std::function<void()> cb, size_t stacksize = 0, bool run_in_scheduler = 1);
     ~Fiber();
 
-    void reset(std::function<void()> cb);
+    void reset(std::function<void()> cb);   // 重新使用该fiber
     void resume();  //唤醒
     void yield();   //让出
 

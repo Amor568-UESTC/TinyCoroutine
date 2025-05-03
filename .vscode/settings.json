@@ -67,6 +67,10 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "chrono": "cpp",
+        "map": "cpp",
+        "iomanip": "cpp",
+        "sstream": "cpp"
     }
 }

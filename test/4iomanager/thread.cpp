@@ -1,7 +1,3 @@
-#include <sys/syscall.h>
-#include <iostream>
-#include <unistd.h>
-
 #include "thread.h"
 
 namespace sylar
