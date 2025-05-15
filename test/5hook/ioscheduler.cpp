@@ -5,7 +5,7 @@
 
 #include "ioscheduler.h"
 
-static bool debug = 0;
+static bool debug = 1;
 
 namespace sylar
 {

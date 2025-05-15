@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 
 
-#define PORT 5686
+#define PORT 8080
 #define MAX_EVENTS 5000
 #define BUFSIZE 1024
 

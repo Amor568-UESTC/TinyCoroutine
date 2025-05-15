@@ -115,7 +115,7 @@ void test_iomanager()
 
     printf("epoll echo server listening for connections on port: %d\n", portno);
     fcntl(sock_listen_fd, F_SETFL, O_NONBLOCK);
-    sylar::IOManager iom(9);
+    sylar::IOManager iom(6);
     iom.addEvent(sock_listen_fd, sylar::IOManager::READ, test_accept);
 }
 
